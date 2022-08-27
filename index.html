@@ -5,42 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Controle de Matriculas da Gama Academy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato" />
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <form id="frmCadastro">
-        <label for="txtMatricula">Matricula:</label>
-        <input type="text" id="txtMatricula" /><br>
+        <label for="txtMatricula">Matrícula:</label>
+        <input type="text" id="txtMatricula" required/><br>
 
         <label for="txtNome">Nome:</label>
-        <input type="text" id="txtNome" /><br>
+        <input type="text" id="txtNome" required/><br>
 
-        <label for="txtEmail">Email:</label>
-        <input type="email" id="txtEmail" /><br>
+        <label for="txtEmail">E-mail:</label>
+        <input type="email" id="txtEmail" required/><br>
 
         <label for="txtCelular">Celular:</label>
-        <input type="text" id="txtCelular" /><br>
+        <input type="tel" pattern="[0-9]{5}-[0-9]{4}" id="txtCelular" required/>
+        <small style="font-size: 12px;"> Ex: 99456-7890 </small><br>
 
         <label for="txtDatCad">Data Cadastro:</label>
-        <input type="date" id="txtDatCad" /><br>
+        <input type="date" id="txtDatCad" required/><br>
 
         <label for="txtHoraCad">Hora Cadastro:</label>
-        <input type="time" id="txtHoraCad" /><br>
+        <input type="time" id="txtHoraCad" required/><br>
 
         <label for="txtDatCur">Data Curso:</label>
-        <input type="date" id="txtDatCur" /><br>
+        <input type="date" id="txtDatCur" required/><br>
 
         <label for="txtHoraCur">Hora Curso:</label>
-        <input type="time" id="txtHoraCur" /><br>
+        <input type="time" id="txtHoraCur" required/><br>
 
         <label for="txtCurDes">Curso Desejado:</label>
-        <input type="text" id="txtCurDes" /><br>
+        <input type="text" id="txtCurDes" required/><br>
 
         <label for="txtDatCurDes">Data Curso Desejado:</label>
-        <input type="date" id="txtDatCurDes" /><br>
+        <input type="date" id="txtDatCurDes" required/><br>
 
         <label for="txtHoraCurDes">Hora Curso Desejado:</label>
-        <input type="time" id="txtHoraCurDes" /><br>
+        <input type="time" id="txtHoraCurDes" required/><br>
 
         <input type="none" value="Salvar" id="btnSalvar" onclick="Adicionar()"/>
   </form>
