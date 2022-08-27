@@ -55,6 +55,16 @@ function Listar() {
     function formatDate(date) {
         return date.substring(8,10) + "/" +date.substring(5,7)  +"/"  +date.substring(0,4);
     }
+
+    function GetCliente(propriedade, valor){
+		var cli = null;
+        for (var item in tbClientes) {
+            var i = JSON.parse(tbClientes[item]);
+            if (i[propriedade] == valor)
+                cli = i;
+        }
+        return cli;
+	}
 }
 
 Listar();
