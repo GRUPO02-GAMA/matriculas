@@ -26,6 +26,10 @@ function Listar() {
 
     for (var i in tbMatriculas) {
         var cli = JSON.parse(tbMatriculas[i]);
+
+        cli.DtCad = formatDate(cli.DtCad);
+        cli.DtCurso = formatDate(cli.DtCurso);
+        cli.DtCursoDesejado = formatDate(cli.DtCursoDesejado);
         //falta fazer o tratamento de data e hora
         $("#tbListar tbody").append(
             `
