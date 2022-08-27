@@ -48,6 +48,15 @@ function showSalvar() {
 function select(id) {
     const tbMatriculas = JSON.parse(localStorage.getItem('tbMatriculas'));
     if( tbMatriculas[id] != null ) {
+
+        // create hidden input to hold element index in array
+        const form = document.getElementById('frmCadastro');
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.value = id;
+        input.id = 'elIndex';
+        form.appendChild(input);
+       
         const estudante = JSON.parse(tbMatriculas[id]);
         // set all elements in form
         document.getElementById('txtMatricula').value = estudante.Matricula;
@@ -65,18 +74,14 @@ function select(id) {
     }
 }
 
-function Editar(id) {
+function Editar() {
     
     var tbMatriculas = JSON.parse( localStorage.getItem('tbMatriculas') );
-
-    // if (tbMatriculas[id] === undefined) {
-    //   alert('Id invalido')
-    //   return false
-    // }
-
-    tbMatriculas[id] = JSON.stringify({
+    var elIndex = document.getElementById('elIndex');
+    
+    tbMatriculas[elIndex.value] = JSON.stringify({
       Matricula: $('#txtMatricula').val(),
-      Nome: document.getElementById('txtNome').value,
+      Nome: $('#txtNome').val(),
       Email: $('#txtEmail').val(),
       Celular: $('#txtCelular').val(),
       DtCad: $('#txtDatCad').val(),
@@ -87,20 +92,6 @@ function Editar(id) {
       DtCursoDesejado: $('#txtDatCurDes').val(),
       HoraCursoDesejado: $('#txtHoraCurDes').val()
     });
-
-    // document.getElementById('txtMatricula').value = estudante.Matricula;
-    //  = estudante.Nome;
-    // document.getElementById('txtEmail').value = estudante.Email;
-    // document.getElementById('txtCelular').value = estudante.Celular;
-    // document.getElementById('txtDatCad').value = estudante.DtCad;
-    // document.getElementById('txtHoraCad').value = estudante.HoraCad;
-    // document.getElementById('txtDatCur').value = estudante.DtCurso;
-    // document.getElementById('txtHoraCur').value = estudante.HoraCurso;
-    // document.getElementById('txtCurDes').value = estudante.CursoDesejado;
-    // document.getElementById('txtDatCurDes').value = estudante.DtCursoDesejado;
-    // document.getElementById('txtHoraCurDes').value = estudante.HoraCursoDesejado;
-
-
 
     localStorage.setItem('tbMatriculas', JSON.stringify(tbMatriculas));
     window.location.reload();
