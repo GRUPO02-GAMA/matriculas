@@ -2,6 +2,7 @@
 body{
     margin-top: 6.25rem;
     background: whitesmoke;
+    font-family: 'Outfit', sans-serif; /*fonte de callback*/
 }
 #frmCadastro{
     display: flex;
@@ -14,6 +15,61 @@ body{
     border-radius: 0.625rem;
     box-shadow: 0px 0px 1em rgb(146, 137, 137);
 }
+
 label{
+        margin-left: 10px;
+        margin-right: 10px
+}
+
+#btnSalvar {
+    /* remover default */
+    appearance:none;
+    -webkit-appearance:none;
+  
+    /* estilo */
+    color: #ffffff;
+    padding:10px;
+    margin-top:15px;
+    border:none;
+    background: linear-gradient(to right, #fc466b, #3f5efb);
+    font-weight:600;
+    border-radius:5px;
+    width:15%;
+  }
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #239aff;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #239aff;
+}
+
+.styled-table tbody tr.active-row {
     font-weight: bold;
+    color: #239aff;
 }
