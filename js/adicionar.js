@@ -35,6 +35,16 @@ function Excluir(id) {
     }
 }
 
+function showEditar() {
+    document.getElementById('btnSalvar').style.display = 'none';
+    document.getElementById('btnEditar').style.display = 'block';
+}
+
+function showSalvar() {
+    document.getElementById('btnSalvar').style.display = 'block';
+    document.getElementById('btnEditar').style.display = 'none';
+}
+
 function select(id) {
     const tbMatriculas = JSON.parse(localStorage.getItem('tbMatriculas'));
     if( tbMatriculas[id] != null ) {
@@ -51,10 +61,12 @@ function select(id) {
         document.getElementById('txtCurDes').value = estudante.CursoDesejado;
         document.getElementById('txtDatCurDes').value = estudante.DtCursoDesejado;
         document.getElementById('txtHoraCurDes').value = estudante.HoraCursoDesejado;
+        showEditar();
     }
 }
 
-// function Editar(id) {
+function Editar(id) {
+    showSalvar();
 //     var tbMatriculas = localStorage.getItem('tbMatriculas')
 
 //     if (tbMatriculas[id] === undefined) {
@@ -78,7 +90,7 @@ function select(id) {
 
 //     localStorage.setItem('tbMatriculas', JSON.stringify(tbMatriculas))
 //     return true
-//   }
+  }
 
 function Adicionar() {
     var tbMatriculas = JSON.parse( localStorage.getItem('tbMatriculas') );
