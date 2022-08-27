@@ -52,9 +52,7 @@ function Listar() {
             `
         );
     }
-    function formatDate(date) {
-        return date.substring(8,10) + "/" +date.substring(5,7)  +"/"  +date.substring(0,4);
-    }
+    
 
     function GetMatrculas(propriedade, valor){
 		var cli = null;
