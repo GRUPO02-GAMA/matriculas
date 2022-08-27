@@ -1,8 +1,11 @@
 /*Arquivo CSS principal da Página*/
 body{
-    margin-top: 6.25rem;
+    margin-top: 1.25rem;
     background: whitesmoke;
     font-family: 'Outfit', sans-serif; /*fonte de callback*/
+}
+h2{
+    text-align: center;
 }
 #frmCadastro{
     display: flex;
