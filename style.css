@@ -1,0 +1,19 @@
+/*Arquivo CSS principal da Página*/
+body{
+    margin-top: 6.25rem;
+    background: whitesmoke;
+}
+#frmCadastro{
+    display: flex;
+    flex-direction: column;
+    width: 15.625rem;
+    height: auto;
+    margin: auto;
+    padding: 5rem;
+    background-color: bisque;
+    border-radius: 0.625rem;
+    box-shadow: 0px 0px 1em rgb(146, 137, 137);
+}
+label{
+    font-weight: bold;
+}
