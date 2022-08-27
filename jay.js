@@ -50,5 +50,5 @@ function Listar() {
     }
 }
 
-
+Listar();
 
