@@ -1,4 +1,12 @@
 function editar(id) {
+    
+    var tbListar = localStorage.getItem('tbListar');
+    
+    if( tbListar[id] === undefined ) {
+        alert('Id invalido');
+        return false;
+    }
+    
     tbListar[id] = JSON.stringify({
         Matricula: $('#txtMatricula').val(),
         Nome: $('#txtNome').val(),
