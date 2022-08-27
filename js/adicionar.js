@@ -2,8 +2,17 @@ $('#formCadastro').on('submit', function() {
     Adicionar();
 }); 
 
+function GetMatricula(propriedade, valor){
+    var cli = null;
+    for (var item in tbClientes) {
+        var i = JSON.parse(tbClientes[item]);
+        if (i[propriedade] == valor)
+            cli = i;
+    }
+    return cli;
+}
+
 function Adicionar() {
-    alert('cheguei aqui');
     var student = GetMatricula('Matricula', $('#txtMatricula').val())
 
     if (student != null) {
