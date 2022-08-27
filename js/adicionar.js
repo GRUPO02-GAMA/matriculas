@@ -66,30 +66,44 @@ function select(id) {
 }
 
 function Editar(id) {
-    showSalvar();
-//     var tbMatriculas = localStorage.getItem('tbMatriculas')
+    
+    var tbMatriculas = JSON.parse( localStorage.getItem('tbMatriculas') );
 
-//     if (tbMatriculas[id] === undefined) {
-//       alert('Id invalido')
-//       return false
-//     }
+    // if (tbMatriculas[id] === undefined) {
+    //   alert('Id invalido')
+    //   return false
+    // }
 
-//     tbMatriculas[id] = JSON.stringify({
-//       Matricula: $('#txtMatricula').val(),
-//       Nome: $('#txtNome').val(),
-//       Email: $('#txtEmail').val(),
-//       Celular: $('#txtCelular').val(),
-//       DtCad: $('#txtDatCad').val(),
-//       HoraCad: $('#txtHoraCad').val(),
-//       DtCurso: $('#txtDatCur').val(),
-//       HoraCurso: $('#txtHoraCur').val(),
-//       CursoDesejado: $('#txtCurDes').val(),
-//       DtCursoDesejado: $('#txtDatCurDes').val(),
-//       HoraCursoDesejado: $('#txtHoraCurDes').val()
-//     })
+    tbMatriculas[id] = JSON.stringify({
+      Matricula: $('#txtMatricula').val(),
+      Nome: document.getElementById('txtNome').value,
+      Email: $('#txtEmail').val(),
+      Celular: $('#txtCelular').val(),
+      DtCad: $('#txtDatCad').val(),
+      HoraCad: $('#txtHoraCad').val(),
+      DtCurso: $('#txtDatCur').val(),
+      HoraCurso: $('#txtHoraCur').val(),
+      CursoDesejado: $('#txtCurDes').val(),
+      DtCursoDesejado: $('#txtDatCurDes').val(),
+      HoraCursoDesejado: $('#txtHoraCurDes').val()
+    });
 
-//     localStorage.setItem('tbMatriculas', JSON.stringify(tbMatriculas))
-//     return true
+    // document.getElementById('txtMatricula').value = estudante.Matricula;
+    //  = estudante.Nome;
+    // document.getElementById('txtEmail').value = estudante.Email;
+    // document.getElementById('txtCelular').value = estudante.Celular;
+    // document.getElementById('txtDatCad').value = estudante.DtCad;
+    // document.getElementById('txtHoraCad').value = estudante.HoraCad;
+    // document.getElementById('txtDatCur').value = estudante.DtCurso;
+    // document.getElementById('txtHoraCur').value = estudante.HoraCurso;
+    // document.getElementById('txtCurDes').value = estudante.CursoDesejado;
+    // document.getElementById('txtDatCurDes').value = estudante.DtCursoDesejado;
+    // document.getElementById('txtHoraCurDes').value = estudante.HoraCursoDesejado;
+
+
+
+    localStorage.setItem('tbMatriculas', JSON.stringify(tbMatriculas));
+    window.location.reload();
   }
 
 function Adicionar() {
