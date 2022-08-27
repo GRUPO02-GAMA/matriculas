@@ -1,20 +1,24 @@
 /*Arquivo CSS principal da Página*/
 body{
     margin-top: 1.25rem;
-    background: whitesmoke;
     font-family: 'Outfit', sans-serif; /*fonte de callback*/
+    background-image: linear-gradient(#D2DFFB, #FADCE6);
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 100vh;
 }
 h2{
     text-align: center;
 }
 #frmCadastro{
+    font-family: 'Lato', sans-serif;
     display: flex;
     flex-direction: column;
     width: 15.625rem;
     height: auto;
     margin: auto;
     padding: 5rem;
-    background-color: bisque;
+    background-color: #D2DFFB;
     border-radius: 0.625rem;
     box-shadow: 0px 0px 1em rgb(146, 137, 137);
 }
@@ -38,6 +42,13 @@ label{
     font-weight:600;
     border-radius:5px;
     width:100%;
+    cursor: pointer;
+  }
+
+  input {
+    cursor: text;
+    background-color: #E8EFFD;
+    border: solid 1px;
   }
 
 .styled-table {
