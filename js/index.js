@@ -1,4 +1,4 @@
-$(function () {
+(function () {
   var operacao = 'A' //"A"=Adição; "E"=Edição
 
   var indice_selecionado = -1
