@@ -2,17 +2,36 @@
 body{
     margin-top: 1.25rem;
     font-family: 'Outfit', sans-serif; /*fonte de callback*/
-    background-image: linear-gradient(#D2DFFB, #FADCE6);
+    /* background-image: linear-gradient(#D2DFFB, #FADCE6);
     background-repeat: no-repeat;
-    background-size: auto;
-    height: 100vh;
+    background-size: auto; */
+    background-color: #f4f8f9;
 }
+
+header {
+    /* background-color: #2196F3; */
+    background-color: #d75d48;
+    color: #ffffff;
+    padding: 2rem 0;
+    text-align: center;
+
+}
+
+header .subtitle {
+    color: #ffffff;
+}
+
+.subtitle {
+    text-align: center;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+}
+
 h2{
     text-align: center;
 }
-#frmCadastro{
+/* #frmCadastro{
     font-family: 'Lato', sans-serif;
-    display: flex;
     flex-direction: column;
     width: 15.625rem;
     height: auto;
@@ -21,19 +40,21 @@ h2{
     background-color: #D2DFFB;
     border-radius: 0.625rem;
     box-shadow: 0px 0px 1em rgb(146, 137, 137);
-}
+} */
 
 label{
         margin-left: 10px;
         margin-right: 10px
 }
 
+/* 
 #btnSalvar, #btnEditar {
-    /* remover default */
+    remover default
     appearance:none;
     -webkit-appearance:none;
-  
-    /* estilo */
+    
+    /* 
+    estilo 
     color: #ffffff;
     padding:10px;
     margin-top:15px;
@@ -44,7 +65,8 @@ label{
     width:100%;
     cursor: pointer;
     text-align: center;
-  }
+}
+*/
 
   input {
     cursor: text;
@@ -87,4 +109,178 @@ label{
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #239aff;
+}
+
+/*======================Estilizando a tabela===================*/
+
+.data-table {
+    width: 100%;
+    background-color: #f4f8f9;
+    border-spacing: 0 0.7rem;
+}
+
+.columns {
+    height: 55px;
+    background-color: #ffffff;
+}
+
+.column {
+    background-color: #ffffff;
+    color: #969cb3;
+    font-weight: normal;
+    padding: 0.7rem 1.5rem;
+}
+
+tbody tr {
+    height: 65px;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #969cb3;
+    opacity: 0.8;
+    transition: .2s
+}
+
+tbody tr:hover {
+    opacity: 1;
+    box-shadow: 0 0px 6px 1px rgba(0, 0, 0, .1);
+    transition: .2s
+}
+
+.btnEditar, .btnExcluir {
+    border: none;
+    background-color: #fdeeea;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* =========== Modal de cadastro ================= */
+
+.modal {
+    background-color: #F5F5F5;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-container {
+    width: 360px;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 0.9rem;
+}
+
+#modal-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 18px;
+}
+
+.modal-title {
+    font-weight: 400;
+    margin: 0;
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.container-fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group-date-time {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group-date-time .container-fields {
+    width: 45%;
+}
+
+.input-group-date-time .field {
+}
+
+.field {
+    height: 40px;
+    padding-left: 12px;
+    margin-bottom: 8px;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+select {
+    padding: 5px 8px;
+    background-color: #ffffff;
+    border-radius: 0.3rem;
+}
+
+label {
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+small {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 6px;
+}
+
+input, .button {
+    padding: 5px 8px;
+    border: 1px #E8563D;
+    border-radius: 0.3rem;
+    background-color: #ffffff;
+}
+
+#input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    width: 47%;
+}
+
+#btnSalvar, #btnEditar {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    transition: .2s;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#btnSalvar {
+    background-color: #d75d48;
+    color: #ffffff;
+    border: 1px solid #d75d48;
+}
+
+#btnSalvar:hover {
+    background-color: #ffffff;
+    color: #E8563D;
+    border: 1px solid #d75d48;
+    transition: .2s;
+}
+
+#btnEditar {
+    background-color: #ffffff;
+    color: #E8563D;
+    border: 1px solid #d75d48;
+}
+
+#btnEditar:hover {
+    background-color: #d75d48;
+    color: #ffffff;
+    transition: .2s;
+
 }

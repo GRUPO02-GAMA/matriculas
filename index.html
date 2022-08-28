@@ -1,57 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Controle de Matriculas da Gama Academy</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Controle de Matriculas da Gama Academy</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato" />
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <form id="frmCadastro">
-        <label for="txtMatricula">Matrícula:</label>
-        <input type="text" id="txtMatricula" required value="12345"/><br>
+  <header>
+    <h2 class="subtitle">Sistema de Controle de Matriculas da Gama Academy</h2>
+  </header>
+  <div class="modal">
+    <form action="javascript:void(0);" method="POST" id="frmCadastro">
+      <div class="modal-container">
+        <div id="modal-title-wrapper">
+          <img src="./img/icon-gama-academy.svg" alt="Ícone da gama academy na cor laranja com o símbolo branco">
+          <h2 class="modal-title">Nova matrícula</h2>
+        </div>
+        <div class="container-fields">
+          <label for="txtMatricula">Matrícula</label>
+          <input type="text" id="txtMatricula" required value="123" placeholder="Nº de matrícula" class="field"
+            class="field" />
+        </div>
+        <div class="container-fields">
+          <label for="txtNome">Nome</label>
+          <input type="text" id="txtNome" required value="Jayneanderson Oliveira" placeholder="Digite seu nome"
+            class="field" />
+        </div>
+        <div class="container-fields">
+          <label for="txtEmail">E-mail</label>
+          <input type="email" id="txtEmail" required value="jay@gmail.com" placeholder="Digite seu e-mail"
+            class="field" />
+        </div>
+        <div class="container-fields">
+          <label for="txtCelular">Celular</label>
+          <input type="tel" pattern="[0-9]{5}-[0-9]{4}" id="txtCelular"required value="99456-7890"
+            placeholder="Ex: 99456-7890" class="field" />
+          <!-- <small style="font-size: 12px;"> Ex: 99456-7890 </small> -->
+        </div>
 
-        <label for="txtNome">Nome:</label>
-        <input type="text" id="txtNome" required value="Jayneanderson Oliveira"/><br>
+        <div class="input-group-date-time">
+          <div class="container-fields">
+            <label for="txtDatCad">Data de cadastro</label>
+            <input type="date" id="txtDatCad" required value="2022-08-27" placeholder="Data de cadastro" class="field" />
+          </div>
+          <div class="container-fields">
+            <label for="txtHoraCad">Hora do cadastro</label>
+            <input type="time" id="txtHoraCad" value="13:50" placeholder="Hora do cadastro" class="field" />
+          </div>
+        </div>
+        <div class="input-group-date-time">
+          <div class="container-fields">
+            <label for="txtDatCur">Data para realizar o curso</label>
+            <input type="date" id="txtDatCur" required value="2022-08-27" placeholder="Data para realizar o curso"
+              class="field" />
+          </div>
+          <div class="container-fields">
+            <label for="txtHoraCur">Hora para realizar o curso</label>
+            <input type="time" id="txtHoraCur" required value="13:50" placeholder="Hora para realizar o curso"
+              class="field" />
+          </div>
+        </div>
+        <div class="container-fields">
+          <!-- <label for="txtCurDes">Nome do curso</label>
+          <input type="text" id="txtCurDes" required value="Express" placeholder="Nome do curso desejado"
+            class="field" /> -->
+            <select name="cursos" id="txtCurDes" class="field">
+              <option value="null">Selecione um curso</option>
+              <option value="node">Node.js</option>
+              <option value="express">Express</option>
+              <option value="html5">Hthml 5</option>
+              <option value="css">CSS</option>
+            </select>
+        </div>
+        <div class="input-group-date-time">
+          <div class="container-fields">
+            <label for="txtDatCur">Data de oferta do curso</label>
+            <input type="date" id="txtDatCurDes" required value="2022-08-27" placeholder="Data de oferta do curso"
+              class="field" />
+          </div>
+          <div class="container-fields">
+            <label for="txtHoraCur">Hora de oferta do curso</label>
+            <input type="time" id="txtHoraCurDes" required value="13:50" placeholder="Hora de oferta do curso"
+              class="field" />
+          </div>
+        </div>
+        <div class="container-fields" id="input-group">
+          <input type="none" value="Salvar" id="btnSalvar" onclick="Adicionar()" />
+          <input type="none" value="Atualizar" id="btnEditar" onclick="Editar()" style="display: none;" />
+        </div>
+      </div>
 
-        <label for="txtEmail">E-mail:</label>
-        <input type="email" id="txtEmail" required value="jay@gmail.com"/><br>
-
-        <label for="txtCelular">Celular:</label>
-        <input type="tel" pattern="[0-9]{5}-[0-9]{4}" id="txtCelular" required value="99456-7890"/>
-        <small style="font-size: 12px;"> Ex: 99456-7890 </small><br>
-
-        <label for="txtDatCad">Data Cadastro:</label>
-        <input type="date" id="txtDatCad" required value="2022-08-27"/><br>
-
-        <label for="txtHoraCad">Hora Cadastro:</label>
-        <input type="time" id="txtHoraCad" value="13:50"/><br>
-
-        <label for="txtDatCur">Data Curso:</label>
-        <input type="date" id="txtDatCur" required value="2022-08-27"/><br>
-
-        <label for="txtHoraCur">Hora Curso:</label>
-        <input type="time" id="txtHoraCur" required value="13:50"/><br>
-
-        <label for="txtCurDes">Curso Desejado:</label>
-        <input type="text" id="txtCurDes" required value="Express"/><br>
-
-        <label for="txtDatCurDes">Data Curso Desejado:</label>
-        <input type="date" id="txtDatCurDes" required value="2022-08-27"/><br>
-
-        <label for="txtHoraCurDes">Hora Curso Desejado:</label>
-        <input type="time" id="txtHoraCurDes" required value="13:50"/><br>
-
-        <input type="none" value="Salvar" id="btnSalvar" onclick="Adicionar()"/>
-        <input type="none" value="Atualizar" id="btnEditar" onclick="Editar()" style="display: none;"/>
-  </form>
-  <table id="tbListar">
-
+    </form>
+  </div>
+  </div>
+  <h3 class="subtitle">Estoque de produtos Eletrônicos</h3>
+  <table id="tbListar" class="data-table">
   </table>
   <p id="prgfrm"></p>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
