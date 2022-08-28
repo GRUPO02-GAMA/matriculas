@@ -1,4 +1,19 @@
-function GetMatricula(propriedade, valor){
+function course_type(course) {
+	switch (course) {
+		case 'node':
+			return 'Node.JS'
+		case 'express':
+			return 'Express'
+		case 'html5':
+			return 'HTML 5'
+		case 'css':
+			return 'CSS'
+		default:
+			return 'Curso não cadastrado'
+	}
+}
+
+function GetMatricula(propriedade, valor) {
     var cli = null;
     for (var item in tbClientes) {
         var i = JSON.parse(tbClientes[item]);
@@ -99,6 +114,8 @@ function Adicionar() {
         tbMatriculas = [];
     }
 
+
+
     var aluno = JSON.stringify({
         Matricula: $('#txtMatricula').val(),
         Nome: $('#txtNome').val(),
@@ -110,7 +127,7 @@ function Adicionar() {
         HoraCurso: $('#txtHoraCur').val(),
         CursoDesejado: $('#txtCurDes').val(),
         DtCursoDesejado: $('#txtDatCurDes').val(),
-        HoraCursoDesejado: $('#txtHoraCurDes').val()
+        HoraCursoDesejado: $('#txtHoraCurDes').val(),
     });
 
     tbMatriculas.push(aluno);
@@ -166,7 +183,7 @@ function Listar() {
                       <td>${cli.HoraCad}</td>
                       <td>${cli.DtCurso}</td>
                       <td>${cli.HoraCurso}</td>
-                      <td>${cli.CursoDesejado}</td>
+                      <td>${course_type(cli.CursoDesejado)}</td>
                       <td>${cli.DtCursoDesejado}</td>
                       <td>${cli.HoraCursoDesejado}</td>
                       <td nowrap>
