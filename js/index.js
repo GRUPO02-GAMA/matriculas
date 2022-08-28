@@ -1,8 +1,3 @@
-// $('#formCadastro').on('submit', function(e) {
-//     e.preventDefault();
-//     Adicionar();
-// }); 
-
 function GetMatricula(propriedade, valor){
     var cli = null;
     for (var item in tbClientes) {
@@ -54,7 +49,6 @@ function select(id) {
         input.type = 'hidden';
         input.value = id;
         input.id = 'elIndex';
-        console.log(input)
         form.appendChild(input);
        
         const estudante = JSON.parse(tbMatriculas[id]);
@@ -62,7 +56,6 @@ function select(id) {
         document.getElementById('txtMatricula').value = estudante.Matricula;
         document.getElementById('txtNome').value = estudante.Nome;
         document.getElementById('txtEmail').value = estudante.Email;
-        console.log(estudante.Celular)
         document.getElementById('txtCelular').value = estudante.Celular;
         document.getElementById('txtDatCad').value = estudante.DtCad;
         document.getElementById('txtHoraCad').value = estudante.HoraCad;
@@ -158,11 +151,8 @@ function Listar() {
             var cli = JSON.parse(tbMatriculas[i])
             
             cli.DtCad = formatDate(cli.DtCad);
-            console.log(cli.DtCad)
             cli.DtCurso = formatDate(cli.DtCurso);
-            console.log(cli.DtCurso)
             cli.DtCursoDesejado = formatDate(cli.DtCursoDesejado);
-            console.log(cli.DtCursoDesejado)
 
             //falta fazer o tratamento de data e hora
             $('#tbListar tbody').append(
