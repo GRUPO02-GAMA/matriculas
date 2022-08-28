@@ -48,13 +48,13 @@ function showSalvar() {
 function select(id) {
     const tbMatriculas = JSON.parse(localStorage.getItem('tbMatriculas'));
     if( tbMatriculas[id] != null ) {
-
         // create hidden input to hold element index in array
         const form = document.getElementById('frmCadastro');
         var input = document.createElement('input');
         input.type = 'hidden';
         input.value = id;
         input.id = 'elIndex';
+        console.log(input)
         form.appendChild(input);
        
         const estudante = JSON.parse(tbMatriculas[id]);
@@ -62,6 +62,7 @@ function select(id) {
         document.getElementById('txtMatricula').value = estudante.Matricula;
         document.getElementById('txtNome').value = estudante.Nome;
         document.getElementById('txtEmail').value = estudante.Email;
+        console.log(estudante.Celular)
         document.getElementById('txtCelular').value = estudante.Celular;
         document.getElementById('txtDatCad').value = estudante.DtCad;
         document.getElementById('txtHoraCad').value = estudante.HoraCad;
@@ -70,6 +71,8 @@ function select(id) {
         document.getElementById('txtCurDes').value = estudante.CursoDesejado;
         document.getElementById('txtDatCurDes').value = estudante.DtCursoDesejado;
         document.getElementById('txtHoraCurDes').value = estudante.HoraCursoDesejado;
+        document
+
         showEditar();
     }
 }
@@ -78,7 +81,6 @@ function Editar() {
     
     var tbMatriculas = JSON.parse( localStorage.getItem('tbMatriculas') );
     var elIndex = document.getElementById('elIndex');
-    
     tbMatriculas[elIndex.value] = JSON.stringify({
       Matricula: $('#txtMatricula').val(),
       Nome: $('#txtNome').val(),
@@ -131,33 +133,36 @@ function Listar() {
         
     $('#tbListar').html(
         `
-            <thead>
-            <tr>
-                <th>Registro</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Celular</th>
-                <th>Data de Cadastro</th>
-                <th>Hora de Cadastro</th>
-                <th>Data para realizar</th>
-                <th>Hora pra realizar</th>
-                <th>Nome do curso</th>
-                <th>Data do curso</th>
-                <th>Hora do curso</th>
+        <thead>
+            <tr class="columns">
+                <th class="column">Registro</th>
+                <th class="column">Nome</th>
+                <th class="column">E-mail</th>
+                <th class="column">Celular</th>
+                <th class="column">Data de Cadastro</th>
+                <th class="column">Hora de Cadastro</th>
+                <th class="column">Data para realizar</th>
+                <th class="column">Hora pra realizar</th>
+                <th class="column">Nome do curso</th>
+                <th class="column">Data do curso</th>
+                <th class="column">Hora do curso</th>
                 <th></th>
             </tr>
-            </thead>
-            <tbody>
-            
-            </tbody>
-            `
+        </thead>
+        <tbody>
+        
+        </tbody>
+        `
         );    
         for (var i in tbMatriculas) {
             var cli = JSON.parse(tbMatriculas[i])
-      
+            
             cli.DtCad = formatDate(cli.DtCad);
+            console.log(cli.DtCad)
             cli.DtCurso = formatDate(cli.DtCurso);
+            console.log(cli.DtCurso)
             cli.DtCursoDesejado = formatDate(cli.DtCursoDesejado);
+            console.log(cli.DtCursoDesejado)
 
             //falta fazer o tratamento de data e hora
             $('#tbListar tbody').append(
@@ -175,8 +180,8 @@ function Listar() {
                       <td>${cli.DtCursoDesejado}</td>
                       <td>${cli.HoraCursoDesejado}</td>
                       <td nowrap>
-                        <img src="img/icon-edit.png" alt="${i}" class="btnEditar" onclick="select(${i})" />
-                        <img src="img/icon-delete.png" alt="${i}" class="btnExcluir" />
+                        <img src="img/icon-update.svg" alt="${i}" class="btnEditar" onclick="select(${i})" />
+                        <img src="img/icon-delete.svg" alt="${i}" class="btnExcluir" />
                       </td>
                   </tr>
                   `
@@ -184,5 +189,4 @@ function Listar() {
         }
     }
 }
-
 Listar();
