@@ -58,7 +58,6 @@ function showSalvar() {
 function select(id) {
     const tbMatriculas = JSON.parse(localStorage.getItem('tbMatriculas'));
     if( tbMatriculas[id] != null ) {
-        // create hidden input to hold element index in array
         const form = document.getElementById('frmCadastro');
         var input = document.createElement('input');
         input.type = 'hidden';
@@ -67,7 +66,6 @@ function select(id) {
         form.appendChild(input);
        
         const estudante = JSON.parse(tbMatriculas[id]);
-        // set all elements in form
         document.getElementById('txtMatricula').value = estudante.Matricula;
         document.getElementById('txtNome').value = estudante.Nome;
         document.getElementById('txtEmail').value = estudante.Email;
@@ -105,7 +103,12 @@ function Editar() {
 
     localStorage.setItem('tbMatriculas', JSON.stringify(tbMatriculas));
     window.location.reload();
-  }
+}
+  
+const dataInput = document.getElementById('txtDatCad');
+dataInput.value = new Date().toISOString().slice(0, 10);
+const horaInput = document.getElementById('txtHoraCad');
+horaInput.value = new Date().toLocaleTimeString().slice(0, 5);
 
 function Adicionar() {
     var tbMatriculas = JSON.parse( localStorage.getItem('tbMatriculas') );
@@ -171,7 +174,6 @@ function Listar() {
             cli.DtCurso = formatDate(cli.DtCurso);
             cli.DtCursoDesejado = formatDate(cli.DtCursoDesejado);
 
-            //falta fazer o tratamento de data e hora
             $('#tbListar tbody').append(
               `
                   <tr>
@@ -195,5 +197,14 @@ function Listar() {
             )
         }
     }
+
+    var nMatricula = JSON.parse(localStorage.getItem('tbMatriculas'));
+	if (nMatricula === null) {
+		$("#txtMatricula").val(1);
+    } else {
+        var ultMatricula = JSON.parse(tbMatriculas.slice(-1));
+        var valMatricula = parseInt(ultMatricula.Matricula) ;
+		$("#txtMatricula").val(valMatricula+1);
+	}
 }
 Listar();

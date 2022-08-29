@@ -22,56 +22,48 @@
           <h2 class="modal-title">Matrícula</h2>
         </div>
         <div class="container-fields">
-          <label for="txtMatricula">Matrícula</label>
-          <input type="text" id="txtMatricula" required value="123" placeholder="Nº de matrícula" class="field"
+          <label for="txtMatricula">Número de Matrícula</label>
+          <input type="text" id="txtMatricula" required disabled class="field"
             class="field" />
         </div>
         <div class="container-fields">
           <label for="txtNome">Nome</label>
-          <input type="text" id="txtNome" required value="Jayneanderson Oliveira" placeholder="Digite seu nome"
+          <input type="text" id="txtNome" required placeholder="Digite seu nome"
             class="field" />
         </div>
         <div class="container-fields">
           <label for="txtEmail">E-mail</label>
-          <input type="email" id="txtEmail" required value="jay@gmail.com" placeholder="Digite seu e-mail"
+          <input type="email" id="txtEmail" required placeholder="Digite seu e-mail"
             class="field" />
         </div>
         <div class="container-fields">
           <label for="txtCelular">Celular</label>
-          <input type="tel" pattern="[0-9]{5}-[0-9]{4}" id="txtCelular" required value="99456-7890"
-            placeholder="Ex: 99456-7890" class="field" />
-          <!-- <small style="font-size: 12px;"> Ex: 99456-7890 </small> -->
+          <input type="tel" pattern="[0-9]{5}-[0-9]{4}" id="txtCelular" required            placeholder="Ex: 99456-7890" class="field" />
         </div>
 
         <div class="input-group-date-time">
           <div class="container-fields">
             <label for="txtDatCad">Data de cadastro</label>
-            <input type="date" id="txtDatCad" required value="2022-08-27" placeholder="Data de cadastro"
-              class="field" />
+            <input type="date" id="txtDatCad" required class="field" />
           </div>
           <div class="container-fields">
             <label for="txtHoraCad">Hora do cadastro</label>
-            <input type="time" id="txtHoraCad" value="13:50" placeholder="Hora do cadastro" class="field" />
+            <input type="time" id="txtHoraCad" required class="field" />
           </div>
         </div>
         <div class="input-group-date-time">
           <div class="container-fields">
             <label for="txtDatCur">Data para realizar o curso</label>
-            <input type="date" id="txtDatCur" required value="2022-08-27" placeholder="Data para realizar o curso"
-              class="field" />
+            <input type="date" id="txtDatCur" min="2022-09-01"  max="2022-12-31" required class="field" />
           </div>
           <div class="container-fields">
             <label for="txtHoraCur">Hora para realizar o curso</label>
-            <input type="time" id="txtHoraCur" required value="13:50" placeholder="Hora para realizar o curso"
-              class="field" />
+            <input type="time" id="txtHoraCur" required class="field" />
           </div>
         </div>
         <div class="container-fields">
-          <!-- <label for="txtCurDes">Nome do curso</label>
-          <input type="text" id="txtCurDes" required value="Express" placeholder="Nome do curso desejado"
-            class="field" /> -->
           <select name="cursos" id="txtCurDes" class="field">
-            <option value="" selected disabled>Selecione um curso</option>
+            <option class="none" value="" selected disabled>Selecione um curso</option>
             <option value="node">Node.JS</option>
             <option value="express">Express</option>
             <option value="html5">HTML 5</option>
@@ -81,13 +73,12 @@
         <div class="input-group-date-time">
           <div class="container-fields">
             <label for="txtDatCur">Data de oferta do curso</label>
-            <input type="date" id="txtDatCurDes" required value="2022-08-27" placeholder="Data de oferta do curso"
+            <input type="date" id="txtDatCurDes" min="2022-09-01" max="2022-12-31" required placeholder="Data de oferta do curso"
               class="field" />
           </div>
           <div class="container-fields">
             <label for="txtHoraCur">Hora de oferta do curso</label>
-            <input type="time" id="txtHoraCurDes" required value="13:50" placeholder="Hora de oferta do curso"
-              class="field" />
+            <input type="time" id="txtHoraCurDes" required class="field" />
           </div>
         </div>
         <div class="container-fields" id="input-group">
@@ -98,7 +89,7 @@
 
     </form>
   </div>
-  <h3 class="subtitle">Listagem de matriculas</h3>
+  <h3 class="subtitle">Listagem de matrículas</h3>
   <table id="tbListar" class="data-table">
   </table>
   <p id="prgfrm"></p>
